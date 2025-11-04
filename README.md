@@ -30,13 +30,11 @@ These estimators minimize analytical loss functions derived from the log-likelih
 
 ### Renormalization Group (RG) Learning
 Several **coarse-graining schemes** are implemented — including block-spin transformations, plaquette blocking, and checkerboard mappings — to derive scale-dependent effective couplings.  
-Learned couplings across RG steps yield **data-driven beta functions** that reproduce analytical RG flow behavior.
+Learned couplings across RG steps yield RG flows that reproduce analytical results, or show new higher order/non-perturbative effects.
 
 ### Observables and Diagnostics
 Physical quantities such as **plaquette energy**, **autocorrelation functions**, **Wilson loops**, and **string tension** are computed to monitor equilibrium and confinement behavior.  
 Diagnostic tools include **error-scaling with sample size**, **autocorrelation time estimation**, and **RG fixed-point detection**.
-
-
 
 Together, these components demonstrate how **data-driven learning** recovers **renormalization behavior**, **universality**, and **confinement properties** from raw lattice configurations.
 
