@@ -10,7 +10,7 @@ This repository contains Julia implementations of classical and gauge lattice fi
 | **2D Wegner’s Ising Gauge Theory (WIGT)** | 2D        | Link-variable lattice gauge theory; implemented with Metropolis and Cluster algorithms; Wilson-loop and string-tension estimation; various RG blocking schemes. |
 | **2D Z₂ Higgs Model**                     | 2D        | Coupled matter–gauge system; spontaneous symmetry breaking and confinement; joint sampling of link and matter fields.                                           |
 
-Key Results
+###Key Results
 
 Demonstrates that inverse Ising and inverse gauge models can be learned directly from Monte Carlo samples.
 
@@ -21,3 +21,26 @@ Extracts string tension from Wilson-loop expectation values, showing area-law co
 Establishes error-scaling with sample sizes.
 
 Connects gauge dualities (Schwinger ↔ Dual Schwinger) with learned coarse-grained couplings.
+
+## Design and Methodology
+
+### Sampling
+Metropolis, Heatbath, and Cluster (Swendsen–Wang / Wolff-type) algorithms are implemented for efficient exploration of the configuration space.  
+For gauge models, sampling is performed over **link variables**, while for scalar and spin models, **site variables** are updated using local or cluster moves.
+
+### Learning
+Coupling constants and effective Hamiltonians are learned directly from sampled data using **Pseudolikelihood (PL)**, and **Score Matching** estimators.  
+These estimators minimize analytical loss functions derived from the log-likelihood or score function, allowing **parameter reconstruction** without explicit partition function evaluation.
+
+### Renormalization Group (RG) Learning
+Several **coarse-graining schemes** are implemented — including block-spin transformations, plaquette blocking, and checkerboard mappings — to derive scale-dependent effective couplings.  
+Learned couplings across RG steps yield **data-driven beta functions** that reproduce analytical RG flow behavior.
+
+### Observables and Diagnostics
+Physical quantities such as **plaquette energy**, **autocorrelation functions**, **Wilson loops**, and **string tension** are computed to monitor equilibrium and confinement behavior.  
+Diagnostic tools include **error-scaling with sample size**, **autocorrelation time estimation**, and **RG fixed-point detection**.
+
+
+
+Together, these components demonstrate how **data-driven learning** recovers **renormalization behavior**, **universality**, and **confinement properties** from raw lattice configurations.
+
