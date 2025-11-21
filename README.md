@@ -45,7 +45,7 @@ This code is provided under a BSD license as part of the Optimization, Inference
 ## Citation
 If you use this repository in your work, please cite:
 ```bibtex
-@misc{shukla2025learningstatisticalfieldtheories,
+@misc{LSFT2025,
       title        = {Learning of Statistical Field Theories},
       author       = {Shreya Shukla and Abhijith Jayakumar and Andrey Y. Lokhov},
       year         = {2025},
